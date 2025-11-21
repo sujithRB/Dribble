@@ -1,5 +1,5 @@
 # Project Responsive Web Design using Bootstrap
-## Date:16-11-25
+## Date:
 
 ## AIM:
 To create a simplified clone of Dribbble (https://dribbble.com/) landing page.
@@ -26,148 +26,224 @@ Create a HTML file and include the needed Bootstrap components.
 Publish the website in the LocalHost.
 
 ## PROGRAM :
-
 ```
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Healthy Recipe Hub</title>
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dribbble Shots</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2d2d2d;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links,
+    .navbar .auth {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .sub-header {
+      background: #fafafa;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .sub-actions button {
+      margin-left: 10px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background: white;
+      cursor: pointer;
+    }
+
+    .sign-up {
+      background: #ea4c89;
+      color: white;
+      border: none;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      padding: 15px 20px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card .info {
+      padding: 10px;
+    }
+
+    .card .author {
+      font-weight: bold;
+      margin: 0 0 4px;
+    }
+
+    .card .stats {
+      font-size: 0.8rem;
+      color: #666;
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-success bg-success text-white border-bottom shadow-sm">
-    <a class="navbar-brand font-weight-bold text-white" href="#">Healthy Recipe Hub</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a class="nav-link text-white" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#">Recipes</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#">Tips</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="#">Contact</a></li>
+  <header class="navbar">
+    <div class="logo">Dribbble</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="# "> Shots</a></li>
+        <li><a href="# "> Designers</a></li>
+        <li><a href="# "> Teams</a></li>
+        <li><a href="# "> Community</a></li>
+        <li><a href="# "> Jobs</a></li>
       </ul>
+    </nav>
+    <div class="auth">
+      <a href="#">Sign up</a>
+      <a href="#">Sign in</a>
     </div>
-  </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <div class="jumbotron jumbotron-fluid bg-light text-center">
-    <div class="container py-5">
-      <h1 class="display-4 font-weight-bold text-success">Eat Healthy, Live Happy!</h1>
-      <p class="lead">Discover easy, tasty recipes and wellness tips for a healthier lifestyle.</p>
-      <a href="#" class="btn btn-success btn-lg">Browse Recipes</a>
+  <section class="sub-header">
+    <p>What are you working on? <strong>Dribbble</strong> is show and tell for designers.</p>
+    <div class="sub-actions">
+      <button>Learn more</button>
+      <button class="sign-up">Sign up</button>
     </div>
-  </div>
+  </section>
 
-  <!-- Recipes Showcase Section -->
-  <div class="container py-4">
-    <h2 class="mb-4 text-center text-success">Today's Featured Recipes</h2>
-    <div class="row">
-      <!-- Card 1 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="ima1.jpg" class="card-img-top" alt="Recipe 1">
-          <div class="card-body">
-            <h5 class="card-title text-success">Quinoa Salad Bowl</h5>
-            <p class="card-text">A protein-packed bowl with veggies, feta, and lemon dressing.</p>
-            <a href="#" class="btn btn-outline-success">See Recipe</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="ima2.jpg" class="card-img-top" alt="Recipe 2">
-          <div class="card-body">
-            <h5 class="card-title text-success">Avocado Toast Deluxe</h5>
-            <p class="card-text">Whole-grain bread topped with smashed avocado and seeds.</p>
-            <a href="#" class="btn btn-outline-success">See Recipe</a>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="ima3.jpg" class="card-img-top" alt="Recipe 3">
-          <div class="card-body">
-            <h5 class="card-title text-success">Berry Smoothie</h5>
-            <p class="card-text">A refreshing blend of berries, banana, and almond milk.</p>
-            <a href="#" class="btn btn-outline-success">See Recipe</a>
-          </div>
-        </div>
+  <section class="filter-bar">
+    <select><option>Popular</option></select>
+    <select><option>Shots</option></select>
+    <select><option>Now</option></select>
+  </section>
+
+  <main class="grid">
+    <!-- Repeat this block for more cards -->
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\6aed879a-d310-4940-84c1-fae0b6f8e929_802x794.jpg" alt="Design shot">
+      <div class="info">
+        <p class="author">Tristan Tate</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
       </div>
     </div>
-  </div>
-
-  <!-- Tips Section -->
-  <div class="container py-4">
-    <h2 class="mb-4 text-success text-center">Healthy Living Tips</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Eat colorful vegetables daily.</li>
-          <li class="list-group-item">Stay hydrated—drink water often.</li>
-          <li class="list-group-item">Get moving: 30 minutes exercise per day.</li>
-          <li class="list-group-item">Choose whole grains over refined products.</li>
-        </ul>
-      </div>
-      <div class="col-md-6">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Limit added sugar and salt.</li>
-          <li class="list-group-item">Snack on nuts and fruit, not junk food.</li>
-          <li class="list-group-item">Cook at home for better control.</li>
-          <li class="list-group-item">Enjoy meals with loved ones.</li>
-        </ul>
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\Andrew-Tate.jpg" alt="Design shot">
+      <div class="info">
+        <p class="author">Andrew Tate</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
       </div>
     </div>
-  </div>
-
-  <!-- Contact Section -->
-  <div class="container py-4">
-    <h2 class="text-center mb-4 text-success">Contact Us</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Your Name">
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" placeholder="Your Email">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" rows="3" placeholder="Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-success btn-block">Send</button>
-        </form>
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\2182574475.webp" alt="Design shot">
+      <div class="info">
+        <p class="author">Andrew Garfield</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
       </div>
     </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-success text-white text-center py-3 mt-4">
-    Created by &lt;DEVAHSRI S&gt;
-  </footer>
-
-  <!-- Bootstrap JS CDN -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\IMG-20250517-WA0009.jpg" alt="Design shot">
+      <div class="info">
+        <p class="author">CEO JERALD</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\ImagesCAY8UW7T.webp" alt="Design shot">
+      <div class="info">
+        <p class="author">Vin Diesel</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\brad-pitt_03_paramount-pictures.webp" alt="Design shot">
+      <div class="info">
+        <p class="author">Brad Pit</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\Tom_Holland.webp" alt="Design shot">
+      <div class="info">
+        <p class="author">Tom Holland</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\Headshot20creditE29CNational20forE29D.webp" alt="Design shot">
+      <div class="info">
+        <p class="author">Chris Hemsworth</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="c:\Users\admin\Downloads\x8aaxbjh8r6a1.jpg" alt="Design shot">
+      <div class="info">
+        <p class="author">Tony Stark</p>
+        <p class="stats">2.9M views • 232k comments • 953k likes</p>
+      </div>
+    </div>
+    <!-- Add more cards as needed -->
+  </main>
 </body>
 </html>
+
 ```
 
 ## OUTPUT:
 
-![alt text](<Screenshot 2025-11-16 165513.png>)
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/788f372a-cdb6-4807-98aa-00a68ed7a7b5" />
 
-![alt text](<Screenshot 2025-11-16 165531.png>)
-
-![alt text](<Screenshot 2025-11-16 165541.png>)
 
 ## RESULT:
 The Project for responsive web design using Bootstrap is completed successfully.
